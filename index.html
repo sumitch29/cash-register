@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cash Regiser</title>
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="heading">Cash Register Manager</h1>
-      <p class="discription">
-        Enter the bill amount and cash given by the customer and know minimum
-        number of notes to return.
-      </p>
-      <label for="bill-amount">Bill Amount</label>
-      <input type="text" id="bill-amount" />
 
-      <label for="cash-given">Cash Given</label>
-      <input type="text" id="cash-given" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Cash Register Manager</title>
+</head>
 
-      <button id="check-button">Check</button>
-      <p id="error-message"></p>
+<body>
+    <header>
+        <h1>Cash Register Manager</h1>
+        <p>Get to know the exact change to return</p>
+        <label for="bill-amount">Bill Amount</label>
+        <input id="bill-amount" onkeypress="return !(event.charCode == 46)" min="1" />
+        <label for="cash-given">Cash Given</label>
+        <input id="cash-given" onkeypress="return !(event.charCode == 46)" min="1" />
+        <div>
+            <button id="btn-calculate">Calculate</button>
+        </div>
+        <p id="p-info">Return Change</p>
+        <div class="container">
+            <table>
+                <tr>
+                    <th>No Of Notes</th>
+                    <td class="no-of-notes">0</td>
+                    <td class="no-of-notes">0</td>
+                    <td class="no-of-notes">0</td>
+                    <td class="no-of-notes">0</td>
+                    <td class="no-of-notes">0</td>
+                    <td class="no-of-notes">0</td>
+                    <td class="no-of-notes">0</td>
+                </tr>
+                <tr>
+                    <th>Note</th>
+                    <td>2000</td>
+                    <td>500</td>
+                    <td>100</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+        <p id="p-words"></p>
+    </header>
 
-      <table class="change-table">
-        <caption>
-          Return Change
-        </caption>
+    <script src="app.js"></script>
+</body>
 
-        <tr>
-          <th>No of Notes</th>
-        </tr>
-
-        <tr>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-          <td class="no-of-notes"></td>
-        </tr>
-        <tr>
-          <th>Notes</th>
-          <td>2000</td>
-          <td>500</td>
-          <td>100</td>
-          <td>20</td>
-          <td>10</td>
-          <td>5</td>
-          <td>1</td>
-        </tr>
-      </table>
-    </div>
-  </body>
-  <script src="/app.js"></script>
 </html>
